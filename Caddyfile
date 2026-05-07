@@ -1,0 +1,4 @@
+dev.wordle-pro-api.dev {
+	reverse_proxy localhost:3000
+	tls internal
+}

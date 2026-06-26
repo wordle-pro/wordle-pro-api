@@ -4,9 +4,10 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts",
-    "build": "pnpm run clean && esbuild src/server.ts --bundle --splitting --platform=node --format=esm --packages=external --outdir=dist",
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "dev": "tsx watch --env-file=.env.development src/server.ts",
+    "preview": "node --env-file=.env.production dist/server.js",
+    "build": "pnpm run clean && esbuild src/server.ts --bundle --splitting --platform=node --format=esm --packages=external --outdir=dist",    
     "start": "node dist/server.js",
     "clean": "rm -rf dist"
   },
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/hchan07/wordle-pro-api#readme",
   "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/env": "^6.0.0",
     "@fastify/type-provider-typebox": "^6.1.0",
     "@sinclair/typebox": "^0.34.49",
     "fastify": "^5.8.5"

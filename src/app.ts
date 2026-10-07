@@ -4,6 +4,7 @@ import fastifyEnv from '@fastify/env';
 
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import helloRoutes from './modules/hello/hello.routes';
+import authRoutes from './modules/auth/auth.routes';
 
 const envSchema = {
   type: 'object',
@@ -51,6 +52,8 @@ const buildApp = async (opts = {}) => {
 
   // Register your modules
   await app.register(helloRoutes, { prefix: '/api/v1' });
+
+  await app.register(authRoutes, { prefix: '/api/v1/auth' });
 
   return app;
 };

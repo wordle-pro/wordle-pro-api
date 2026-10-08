@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",    
     "dev": "tsx watch --env-file=.env.development src/server.ts",
     "preview": "node --env-file=.env.production dist/server.js",
-    "build": "pnpm run clean && esbuild src/server.ts --bundle --splitting --platform=node --format=esm --packages=external --outdir=dist",    
+    "build": "pnpm run clean && esbuild src/server.ts --bundle --splitting --platform=node --format=esm --alias:@=./src --outdir=dist",
     "start": "node dist/server.js",
     "clean": "rm -rf dist"
   },

@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",    
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch --env-file=.env.development src/server.ts",
     "preview": "node --env-file=.env.production dist/server.js",
     "build": "pnpm run clean && esbuild src/server.ts --bundle --splitting --platform=node --format=esm --alias:@=./src --outdir=dist",
@@ -28,6 +28,7 @@
     "@fastify/env": "^6.0.0",
     "@fastify/type-provider-typebox": "^6.1.0",
     "@sinclair/typebox": "^0.34.49",
+    "@supabase/supabase-js": "^2.117.3",
     "fastify": "^5.8.5"
   },
   "devDependencies": {

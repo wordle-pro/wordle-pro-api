@@ -9,7 +9,7 @@ RUN corepack enable
 WORKDIR /app
 
 # Copy dependency files first
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml tsconfig.json ./
 
 # Install dependencies allowing esbuild compilation
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --dangerously-allow-all-builds

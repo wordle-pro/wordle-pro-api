@@ -21,7 +21,7 @@ importers:
         specifier: ^0.34.49
         version: 0.34.49
       '@supabase/supabase-js':
-        specifier: ^2.117.3
+        specifier: ^2.112.2
         version: 2.117.3
       fastify:
         specifier: ^5.8.5

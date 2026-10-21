@@ -29,6 +29,9 @@ FROM node:24-slim
 
 WORKDIR /app
 
+ARG COMMIT_HASH="unknown"
+ENV COMMIT_HASH=$COMMIT_HASH
+
 ENV NODE_ENV=production
 
 # Copy bundled files and external production dependencies

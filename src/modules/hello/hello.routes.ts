@@ -3,7 +3,7 @@ import { HelloParamSchema, HelloResponseSchema } from './hello.schema';
 import { getHelloHandler } from './hello.controller';
 
 const helloRoutes = (app: FastifyInstance) => {
-  app.get('/hello/:name', {
+  app.get('/:name', {
     schema: {
       params: HelloParamSchema,
       response: { 200: HelloResponseSchema }
